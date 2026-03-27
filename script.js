@@ -17,7 +17,7 @@ form.addEventListener('submit', function(e){
     let moradia = document.getElementById('moradia_a').value;
     let quintal = document.getElementById('quintal_sim').value;
     let horasAnimal = document.getElementById('horasAnimal').value;
-    let pet = document.getElementById('pet_sim').value;
+    let pet = document.getElementById('pet_nao').value;
     let motivo = document.getElementById('motivo').value;
 
 
@@ -94,6 +94,10 @@ form.addEventListener('submit', function(e){
 
     }
 
+    if(pet == Nao){
+
+        alert("A ONG estará acompanhando, caso realmente queira adotar");
+    }
 
     
 
