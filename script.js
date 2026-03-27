@@ -14,10 +14,10 @@ form.addEventListener('submit', function(e){
     let cpf =  document.getElementById('cpf').value;
     let idade = document.getElementById('idade').value;
     let cidade = document.getElementById('cidade').value;
-    let moradia = document.getElementById('moradia').value;
-    let quintal = document.getElementById('quintal').value;
+    let moradia = document.getElementById('moradia_a').value;
+    let quintal = document.getElementById('quintal_sim').value;
     let horasAnimal = document.getElementById('horasAnimal').value;
-    let pet = document.getElementById('pet').value;
+    let pet = document.getElementById('pet_sim').value;
     let motivo = document.getElementById('motivo').value;
 
 
@@ -46,7 +46,7 @@ form.addEventListener('submit', function(e){
     }
 
 
-    if(telefone.length > 9) {
+    if(telefone.length < 9) {
 
         document.getElementById('erroTelefone').textContent = 'O telefone deve ter apenas 9 caracteres.';
 
@@ -54,7 +54,7 @@ form.addEventListener('submit', function(e){
 
     }
 
-    if(cpf.length > 14) {
+    if(cpf < 14) {
 
         document.getElementById('erroCPF').textContent = 'O CPF deve ter pelo menos 14 caracteres.';
 
@@ -62,7 +62,7 @@ form.addEventListener('submit', function(e){
 
     }
 
-     if(idade.length <= 18) {
+     if(idade < 18) {
 
         document.getElementById('erroIdade').textContent = 'ERRO! Não é permitido menores de 18 anos.';
 
@@ -70,7 +70,7 @@ form.addEventListener('submit', function(e){
 
     }
 
-    if(cidade.length <= 32) {
+    if(cidade.length <= 15) {
 
         document.getElementById('erroCidade').textContent = 'ERRO! Não é um nome de cidade com mais de 32 caracteres.';
 
@@ -78,33 +78,24 @@ form.addEventListener('submit', function(e){
 
     }
 
-    if(horasAnimal.length > 8) {
+    if(horasAnimal > 8) {
 
-        document.getElementById('erroHorasAnimal').textContent = 'Alerta!';
-         alert("Situação preocupante!");
+    alert("Alerta muito tempo sozinho!") ;      
 
-        valido = false;
+        
 
     }
    
     if(motivo.length < 10) {
 
-        document.getElementById('erroMotivo').textContent = 'Erro! Motivo muito pequeno, com poucos caracteres, não pode ser motivo generico';
+        document.getElementById('erroMotivo').textContent = 'Erro! Motivo muito pequeno, com poucos caracteres, não pode ser motivo genérico';
 
         valido = false;
 
     }
 
-    if(quintal) {
-        
 
-
-
-    }
-
-
-
-
+    
 
     if(valido){
 

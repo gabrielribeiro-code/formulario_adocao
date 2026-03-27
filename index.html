@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
     <title>Formulário de Adoção de Cães</title>
 </head>
 <body>
@@ -42,7 +43,7 @@
  </br>
 
             <label for="cidade"> Cidade: </label> <br>
-            <input type="number" id="cidade" placeholder="Cidade">
+            <input type="text" id="cidade" placeholder="Cidade">
             <div id="erroCidade" class="erro"> </div>
  </br>
 
@@ -73,12 +74,12 @@
             <label for="pet"> Ja teve Pet?</label> <br>
 
             <label for="pet"> Sim </label> 
-            <input type="radio" id="pet" name ="pet" value="Sim" placeholder="Pet">
+            <input type="radio" id="pet_sim" name ="pet" value="Sim" placeholder="Pet">
             <div id="erroPet" class="erro"> </div>
 
 
             <label for="pet"> Nao </label> 
-            <input type="radio" id="pet" name ="pet" value="Nao" placeholder="Pet"> 
+            <input type="radio" id="pet_nao" name ="pet" value="Nao" placeholder="Pet"> 
             <div id="erroPet" class="erro"> </div>
 
  </br>
@@ -100,6 +101,7 @@
 </br>
 
             <br>
+
           <button type="submit"> Enviar </button>
 
         </form>
