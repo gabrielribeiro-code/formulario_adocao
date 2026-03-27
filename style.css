@@ -1,3 +1,8 @@
 body{
     text-align: center;
 }
+.container{
+    right: 50%;
+    top: 50%;
+margin-top: 100PX;
+}
