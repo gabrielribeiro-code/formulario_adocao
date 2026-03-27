@@ -18,6 +18,7 @@ form.addEventListener('submit', function(e){
     let quintal = document.getElementById('quintal').value;
     let horasAnimal = document.getElementById('horasAnimal').value;
     let pet = document.getElementById('pet').value;
+    let motivo = document.getElementById('motivo').value;
 
 
     document.getElementById('erroNome').textContent ='';
@@ -61,9 +62,9 @@ form.addEventListener('submit', function(e){
 
     }
 
-     if(idade.length < 3) {
+     if(idade.length <= 18) {
 
-        document.getElementById('erroIdade').textContent = 'ERRO! Não é permitido idade com mais de 3 caracteres.';
+        document.getElementById('erroIdade').textContent = 'ERRO! Não é permitido menores de 18 anos.';
 
         valido = false;
 
@@ -77,11 +78,27 @@ form.addEventListener('submit', function(e){
 
     }
 
-    if(horasAnimal.length < 24) {
+    if(horasAnimal.length > 8) {
 
-        document.getElementById('erroHorasAnimal').textContent = 'Erro! Não é possível que o animal fica mais de 24 horas sozinho!';
+        document.getElementById('erroHorasAnimal').textContent = 'Alerta!';
+         alert("Situação preocupante!");
 
         valido = false;
+
+    }
+   
+    if(motivo.length < 10) {
+
+        document.getElementById('erroMotivo').textContent = 'Erro! Motivo muito pequeno, com poucos caracteres, não pode ser motivo generico';
+
+        valido = false;
+
+    }
+
+    if(quintal) {
+        
+
+
 
     }
 

@@ -48,28 +48,39 @@
 
             <label for="moradia"> Tipo de Moradia </label><br>
             <label for="moradia"> Casa </label> 
-            <input type="radio" id="moradia" placeholder="Moradia">
+            <input type="radio" id="moradia_c" name = "moradia" value = "Casa" placeholder="Moradia">
             <div id="erroMoradia" class="erro"> </div>
+
              <label for="moradia"> Apartamento</label> 
-            <input type="radio" id="moradia" placeholder="Moradia">
+            <input type="radio" id="moradia_a" name = "moradia" value = "Apartamento" placeholder="Moradia">
+            <div id="erroMoradia" class="erro"> </div>
 
  </br>
 
 <br>
 
             <label for="quintal"> Possui quintal: </label> <br>
+
              <label for="quintal"> Sim </label> 
-            <input type="radio" id="quintal" placeholder="Quintal">
+            <input type="radio" id="quintal_sim" name="quintal" value="Sim" placeholder="Quintal">
             <div id="erroQuintal" class="erro"> </div>
 
-            <label for="quintal"> Não </label> 
-            <input type="radio" id="quintal" placeholder="Quintal">
+            <label for="quintal"> Nao </label> 
+            <input type="radio" id="quintal_nao" name="quintal" value="Nao" placeholder="Quintal">
             <div id="erroQuintal" class="erro"> </div>
  </br>
 
-            <label for="pet"> Ja teve Pet?: </label> <br>
-            <input type="text" id="pet" placeholder="Pet">
+            <label for="pet"> Ja teve Pet?</label> <br>
+
+            <label for="pet"> Sim </label> 
+            <input type="radio" id="pet" name ="pet" value="Sim" placeholder="Pet">
             <div id="erroPet" class="erro"> </div>
+
+
+            <label for="pet"> Nao </label> 
+            <input type="radio" id="pet" name ="pet" value="Nao" placeholder="Pet"> 
+            <div id="erroPet" class="erro"> </div>
+
  </br>
 
             <label for="horasAnimal"> Quantas horas animal fica sozinho por dia: </label> <br>
@@ -82,9 +93,14 @@
             <div id="erroMotivo" class="erro"> </div>
  </br>
 
+          <label for="termo"> Termos de Acessibilidade </label> <br>
 
+             <label for="termo"> Aceito </label> <br>
+            <input type="radio" id="termo" placeholder = "Termo de Acessibilidade">
+</br>
 
-            <button type="submit"> Enviar </button>
+            <br>
+          <button type="submit"> Enviar </button>
 
         </form>
 
