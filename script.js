@@ -10,13 +10,14 @@ form.addEventListener('submit', function(e){
 
     let nome = document.getElementById('nome').value;
     let email = document.getElementById('email').value;
-    let senha = document.getElementById('senha').value;
+    let telefone = document.getElementById('telefone').value;
+    let cpf =  document.getElementById('cpf').value;
 
 
     document.getElementById('erroNome').textContent ='';
     document.getElementById('erroEmail').textContent ='';
-    document.getElementById('erroSenha').textContent ='';
-
+    document.getElementById('erroTelefone').textContent ='';
+    document.getElementById('erroCPF').textContent ='';
 
     if (nome.length < 3) {
 
@@ -33,9 +34,17 @@ form.addEventListener('submit', function(e){
     }
 
 
-    if(senha.length < 6) {
+    if(telefone.length < 8) {
 
-        document.getElementById('erroSenha').textContent = 'A senha deve ter pelo menos 6 caracteres.';
+        document.getElementById('erroTelefone').textContent = 'O telefone deve ter pelo menos 8 caracteres.';
+
+        valido = false;
+
+    }
+
+    if(cpf.length < 8) {
+
+        document.getElementById('erroCPF').textContent = 'O CPF deve ter pelo menos 14 caracteres.';
 
         valido = false;
 
@@ -51,7 +60,8 @@ form.addEventListener('submit', function(e){
         Dados enviados: <br>
         Nome: ${nome} <br>
         Email: ${email} <br>
-        Senha: ${senha} <br>
+        Telefone: ${telefone} <br>
+        CPF: ${cpf} <br>
         
         `;
 
