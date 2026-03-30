@@ -1,8 +1,9 @@
 body{
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container{
     right: 50%;
     top: 50%;
-margin-top: 100PX;
+margin-top: 80PX;
 }

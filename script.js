@@ -72,7 +72,7 @@ form.addEventListener('submit', function(e){
 
     if(cidade.length <= 15) {
 
-        document.getElementById('erroCidade').textContent = 'ERRO! Não é um nome de cidade com mais de 32 caracteres.';
+        document.getElementById('erroCidade').textContent = 'ERRO! Não é  permitido um nome de cidade com mais de 32 caracteres.';
 
         valido = false;
 

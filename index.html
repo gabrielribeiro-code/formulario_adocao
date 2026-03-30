@@ -15,7 +15,7 @@
         <form action="" id="formulario">
 
             <label for="nome"> Nome: </label><br>
-            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="nome" required placeholder="Nome">
             <div id="erroNome" class="erro"> </div>
         </br>
 
@@ -27,13 +27,13 @@
 
 
             <label for="telefone"> Telefone: </label><br>
-            <input type="number" id="telefone" placeholder="00000-0000">
+            <input type="text" id="telefone" placeholder="00000-0000">
             <div id="erroTelefone" class="erro"> </div>
              </br>
 
 
             <label for="cpf"> CPF: </label> <br>
-            <input type="number" id="cpf" placeholder="00000000000000">
+            <input type="text" id="cpf" placeholder="00000000000000">
             <div id="erroCPF" class="erro"> </div>
  </br>
 
@@ -90,9 +90,20 @@
  </br>
 
             <label for="motivo"> Motivo da adoção: </label> <br>
-            <input type="text" id="motivo" placeholder="Motivo">
+
+            <textarea name="motivo" id="motivo"></textarea>
             <div id="erroMotivo" class="erro"> </div>
  </br>
+
+            <label for="permite"> Permite Animais? (Apartamento)</label>
+            <input type = "checkbox" id="permite">
+<br><br>
+
+            <label for="seguro"> Quintal seguro? (Casa)</label>
+            <input type = "checkbox" id="seguro">
+<br><br>
+
+
 
           <label for="termo"> Termos de Acessibilidade </label> <br>
 
