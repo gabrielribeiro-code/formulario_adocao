@@ -63,7 +63,7 @@ form.addEventListener('submit', function(e){
         return alert("Informe se o quintal é seguro!");
      }
 
-     if(horas < 8){
+     if(horasAnimal < 8){
         return alert("Aninal ficará muito tempo sozinho, coitado!");
      }
 
