@@ -51,13 +51,27 @@ form.addEventListener('submit', function(e){
 
      //validações regra de négocio
 
-     if (moradia == "apartamento" && !permite){
-        return alert("apartamento")
+     if (moradia == "apartamento" && quintal.value == "sim"){
+        return alert("apartamento não pode ter quintal!");
      }
     
+     if (moradia == "apartamento" && !permite){
+        return alert("Apartamento não permite animais!");
+     }
+
+     if (moradia == "casa" && !seguro){
+        return alert("Informe se o quintal é seguro!");
+     }
+
+     if(horas < 8){
+        return alert("Aninal ficará muito tempo sozinho, coitado!");
+     }
+
+     if(pet.value == "nao"){
+        return alert("A ONG não irá te acompanhar!");
+     }
+
      
-
-
 
      let motivosInvalidos = ["quero", "porque sim"];
 
