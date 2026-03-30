@@ -46,7 +46,7 @@ form.addEventListener('submit', function(e){
      if(!pet) return alert ("informe seu pet");
      if(horasAnimal == "" || isNaN(horasAnimal)) return alert ("Horas inválidas");
      if(motivo.length < 10) return alert("Motivo pequeno!");
-     if(termo) return alert("aceite os termos para a adoção!");
+     if(!termo) return alert("aceite os termos para a adoção!");
          
 
      //validações regra de négocio
@@ -86,7 +86,7 @@ form.addEventListener('submit', function(e){
 
 
     if(!adotar){
-        return alert("Cuidado com sua escolha sem cautela!");
+        return alert("Cuidado com sua escolha, sem pensar, sem cautela!");
     }
 
     document.getElementById("resultado").innerHTML = 
