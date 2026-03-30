@@ -38,7 +38,7 @@ form.addEventListener('submit', function(e){
      if(!email.includes('@')) return alert("Email Inválido");
      if(telefone.length < 9) return alert("Telefone Inválido");
      if(cpf == "") return alert("CPF Obrigatorio");
-     if(cpfCadastados.includes(cpf)) return alert("CPF já cadastrado");
+     if(cpfCadastrados.includes(cpf)) return alert("CPF já cadastrado");
      if (idade < 18) return alert("Deve ser maior de 18 anos!");
      if (cidade == "") return alert("Deve colcocar obrigátorio a cidade!");
      if (moradia == "") return alert("Moradia");
@@ -71,7 +71,7 @@ form.addEventListener('submit', function(e){
         return alert("A ONG não irá te acompanhar!");
      }
 
-     
+
 
      let motivosInvalidos = ["quero", "porque sim"];
 
