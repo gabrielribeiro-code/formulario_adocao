@@ -6,7 +6,7 @@ form.addEventListener('submit', function(e){
     e.preventDefault();
 
 
-    let valido = true;
+    
 
     let nome = document.getElementById('nome').value;
     let email = document.getElementById('email').value;
@@ -15,111 +15,71 @@ form.addEventListener('submit', function(e){
     let idade = document.getElementById('idade').value;
     let cidade = document.getElementById('cidade').value;
     let moradia = document.getElementById('moradia_a').value;
-    let quintal = document.getElementById('quintal_sim').value;
+    let quintal = document.querySelector('input[name="quintal"]:checked');
     let horasAnimal = document.getElementById('horasAnimal').value;
-    let pet = document.getElementById('pet_nao').value;
+    let pet = document.querySelector('input[name="pet"]:checked');
     let motivo = document.getElementById('motivo').value;
+    let permite = document.getElementById('permite').checked;
+    let seguro = document.getElementById('seguro').checked;
+    let financeiro = document.getElementById('financeiro').checked;
+    let adotar = document.getElementById('adotar').checked;
+    let termo = document.getElementById('termo').checked;
 
-
-    document.getElementById('erroNome').textContent ='';
-    document.getElementById('erroEmail').textContent ='';
-    document.getElementById('erroTelefone').textContent ='';
-    document.getElementById('erroIdade').textContent ='';
-    document.getElementById('erroCidade').textContent ='';
-    document.getElementById('erroMoradia').textContent ='';
-    document.getElementById('erroQuintal').textContent ='';
-    document.getElementById('erroPet').textContent ='';
-     document.getElementById('erroHorasAnimal').textContent ='';
-
-    if (nome.length < 3) {
-
-        document.getElementById('erroNome').textContent = 'Nome invalido, Nome deve ter pelo menos 3 caracteres.';
-
-        valido = false;
-
-    }
-
-    if(!email.includes('@')){
-
-        document.getElementById('erroEmail').textContent = 'Email Invalido.';
-        valido = false;
-    }
-
-
-    if(telefone.length < 9) {
-
-        document.getElementById('erroTelefone').textContent = 'O telefone deve ter apenas 9 caracteres.';
-
-        valido = false;
-
-    }
-
-    if(cpf < 14) {
-
-        document.getElementById('erroCPF').textContent = 'O CPF deve ter pelo menos 14 caracteres.';
-
-        valido = false;
-
-    }
-
-     if(idade < 18) {
-
-        document.getElementById('erroIdade').textContent = 'ERRO! Não é permitido menores de 18 anos.';
-
-        valido = false;
-
-    }
-
-    if(cidade.length <= 15) {
-
-        document.getElementById('erroCidade').textContent = 'ERRO! Não é  permitido um nome de cidade com mais de 32 caracteres.';
-
-        valido = false;
-
-    }
-
-    if(horasAnimal > 8) {
-
-    alert("Alerta muito tempo sozinho!") ;      
-
-        
-
-    }
-   
-    if(motivo.length < 10) {
-
-        document.getElementById('erroMotivo').textContent = 'Erro! Motivo muito pequeno, com poucos caracteres, não pode ser motivo genérico';
-
-        valido = false;
-
-    }
-
-    if(pet == Nao){
-
-        alert("A ONG estará acompanhando, caso realmente queira adotar");
-    }
-
+    let cpfCadastrados = ["125678900", "11111111111"];
     
+//Teste De Campo
+  //  console.log("hello test")
 
-    if(valido){
 
-        let resultado = document.getElementById('resultado');
 
-        resultado.innerHTML = `
-        
-        Dados enviados: <br>
-        Nome: ${nome} <br>
-        Email: ${email} <br>
-        Telefone: ${telefone} <br>
-        CPF: ${cpf} <br>
-        
-        
-        `;
+    //validações
 
-        form.reset();
-        
+    if (nome.length < 3)  return alert("nome Inválido");
+     if(!email.includes('@')) return alert("Email Inválido");
+     if(telefone.length < 9) return alert("Telefone Inválido");
+     if(cpf == "") return alert("CPF Obrigatorio");
+     if(cpfCadastados.includes(cpf)) return alert("CPF já cadastrado");
+     if (idade < 18) return alert("Deve ser maior de 18 anos!");
+     if (cidade == "") return alert("Deve colcocar obrigátorio a cidade!");
+     if (moradia == "") return alert("Moradia");
+     if(!quintal) return alert("Informe seu quintal");
+     if(!pet) return alert ("informe seu pet");
+     if( horasAnimal == "" || isNan(horasAnimal)) return alert ("Horas inválidas");
+     if( motivo.length < 10) return alert("Motivo pequeno!");
+     if(termo) return alert("aceite os termos para a adoção!");
+         
+
+     //validações regra de négocio
+
+     if (moradia == "apartamento" && !permite){
+        return alert("apartamento")
+     }
+    
+     
+
+
+
+     let motivosInvalidos = ["quero", "porque sim"];
+
+     if(motivosInvalidos.includes(motivo.toLowerCase())){
+        return alert("Motivo Inválido");
+     }
+
+     if(!financeiro){
+        return alert("Sem condições financeiras!");
+
+     }
+
+
+    if(!adotar){
+        return alert("Cuidado com sua escolha sem cautela!");
     }
 
-
+    document.getElementById("resultado").innerHTML = 
+    "Cadastro realizado com sucesso!<br>" +
+    "Nome: " + nome + "<br>" +
+    "Email: " + email + "<br>" +
+    "Telefone: " + telefone + "<br>" +
+    "Cidade: " + cidade;
 
 })
